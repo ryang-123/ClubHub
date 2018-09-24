@@ -1,0 +1,161 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Club Hub</title>
+    <base target="_top">
+ <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open&#43;Sans">
+
+    <style>
+
+
+    .home{
+      background: url("main.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      font-size: 88;
+      font-family: Open Sans;
+      background-repeat: no-repeat;
+      -webkit-transition: width 2s;
+      transition: width 2s;
+    }
+
+    .centerPic {
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+       width: 50%;
+     
+   }
+
+    .tab {
+
+        float: left;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        font-family: Open Sans;
+        width: 45%;
+        height: 300px;
+        overflow-y:scroll;
+
+    }
+    
+    .centerPic:hover
+    {
+	   opacity: 0.3;
+	   filter: alpha(opacity=30);
+    }
+
+
+    .tab button {
+        display: block;
+        background-color: inherit;
+        color: black;
+        padding: 22px 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        font-size: 17px;
+    }
+
+    .tab button:hover {
+        background-color: #ddd;
+    }
+
+    .tab button.active {
+        background-color: #ccc;
+    }
+
+    .tabcontent {
+
+        margin-left: 300px;
+        text-align: justify;
+        padding: 0px 12px 0px 25px;
+        padding-left: 50px;
+        width: 45%;
+        border-left: none;
+        height: 300px;
+        display: none;
+        font-family: Open Sans;
+
+        overflow-y:scroll;
+
+    }
+
+    footer {
+
+    color: white;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px;
+    clear: both;
+    font-family: Open Sans;
+    }
+
+    .updateButton
+    {
+      margin-bottom: 5px;
+    }
+
+    /* SEARCH CSS */
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 12px; 
+        background-repeat: no-repeat;
+        width: 50%;
+        font-size: 16px; 
+        padding: 12px 20px 12px 40px; 
+        border: 1px solid #ddd;
+        margin-left:260px;
+        margin-bottom: 12px; 
+    }
+
+    #myUL {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myUL li a {
+        border: 1px solid #ddd; 
+        margin-top: -1px; 
+        background-color: #f6f6f6;
+        padding: 12px; 
+        text-decoration: none; 
+        font-size: 18px; 
+        color: black;
+        display: block; 
+    }
+
+    #myUL li a:hover:not(.header) {
+        background-color: #eee; 
+    }
+    
+
+
+    </style>
+
+  </head>
+  <body>
+  
+  <a href="https://script.google.com/macros/s/AKfycbyLAjf0y6o_bz60LjoRQkaIPnp3Eita4voNsJ2Pjt3v/dev">
+     <img src="https://firebasestorage.googleapis.com/v0/b/clubhub-684e7.appspot.com/o/clubhub%20logo.jpg?alt=media&amp;token=19183a62-89c1-4a8c-a1f8-8b1d7c1f45e1" class="centerPic" width="800" height="250">
+  </a>
+  
+  <input type = "text" id="myInput" onkeyup="searchClub()"placeholder="search clubs" class="SearchBar">
+  <h3 class = "center"  style="font-family: Open Sans; font-size:14px">Click checkboxes to add to your Google Calender</h3>
+  <input type="submit" id="updateButton" form="clubform" value="Add Calenders">
+  <div class="center">
+   <form id="clubform" action ="https://script.google.com/macros/s/AKfycbyLAjf0y6o_bz60LjoRQkaIPnp3Eita4voNsJ2Pjt3v/dev" method="post" target="_top">
+
+   <input type = "hidden" name ="update">
+   
+   
+
+  <div class="tab">
+    <ul id="myUL">
